@@ -2,14 +2,14 @@ import React, { PropTypes } from 'react';
 
 import Comment from './comment';
 
-const CommentList = (props) => {
-  const renderedComments = props.comments.map((comment, i) => (
+const CommentList = ({ comments, isLoading }) => {
+  const renderedComments = comments.map((comment, i) => (
     <Comment author={comment.author} key={i}>
-      <span>{comment.text}</span>
+      <span>{comment.message}</span>
     </Comment>
   ));
 
-  return renderedComments.length ? (
+  return !isLoading ? (
     <div className="commentList">
       {renderedComments}
     </div>
@@ -21,10 +21,13 @@ const CommentList = (props) => {
 };
 
 CommentList.propTypes = {
-  comments: PropTypes.arrayOf(PropTypes.shape({
-    author: PropTypes.string,
-    message: PropTypes.string,
-  })),
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      author: PropTypes.string,
+      message: PropTypes.string,
+    })
+  ),
+  isLoading: PropTypes.bool,
 };
 
 export default CommentList;

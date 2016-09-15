@@ -3,6 +3,11 @@
         "jest": true
     },
     "extends": "airbnb",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true
+      }
+    },
     "globals": {
         "fetch": true
     },
