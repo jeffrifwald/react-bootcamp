@@ -1,0 +1,19 @@
+.commentInput {
+  appearance: none;
+  background: transparent;
+  border: none;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0;
+
+  + .commentInput {
+    margin-left: -1px;
+    border-left: 1px dotted $color-gray;
+    padding-left: 1rem;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

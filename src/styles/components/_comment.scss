@@ -1,0 +1,42 @@
+.comment {
+  margin-bottom: 1rem;
+  padding-left: 4rem;
+  animation: comment-enter 0.3s both ease-in-out;
+
+  @keyframes comment-enter {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    height: 3rem;
+    width: 3rem;
+    background: gray;
+    border-radius: 50%;
+  }
+
+  > .commentAuthor {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    height: 1rem;
+  }
+
+  > .commentText {
+    padding: 1rem;
+    background: $color-primary;
+    color: white;
+    display: inline-block;
+    border-radius: 0.5rem;
+  }
+}

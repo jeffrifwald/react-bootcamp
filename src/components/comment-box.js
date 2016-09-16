@@ -45,7 +45,7 @@ class CommentBox extends React.Component {
 
     return (
       <div className="commentBox">
-        <h1>Comments</h1>
+        <h1 className="commentHeading">Comments</h1>
         <CommentList comments={comments} isLoading={isLoading} />
         <CommentForm
           comment={this.state.comment}
